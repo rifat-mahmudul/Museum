@@ -1,0 +1,172 @@
+/* Video Gallery Section */
+.vid-gallery {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    overflow: hidden; /* Important to hide overflow */
+  }
+  
+  /* Carousel Header */
+  .vid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .vid-header h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+  }
+  
+  .vid-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Navigation Buttons */
+  .vid-nav-btn {
+    border-radius: 100%;
+    border: none;
+    height: 30px;
+    width: 30px;
+  }
+  
+  .vid-nav-btn:disabled {
+    cursor: not-allowed;
+  }
+  
+  /* Video Container */
+  .vid-container {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+  
+  /* Video Card */
+  .vid-card {
+    flex: 0 0 calc(20% - 13px); /* 5 cards per row with gap */
+    min-width: 220px;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .vid-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #fff;
+    color: #000;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 2;
+    border-radius: 0;
+  }
+  
+  .vid-thumbnail {
+    position: relative;
+    height: 0;
+    padding-bottom: 133%; /* Aspect ratio of thumbnails */
+    overflow: hidden;
+  }
+  
+  .vid-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .vid-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+    color: #fff;
+  }
+  
+  .vid-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .vid-description {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  
+  .vid-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .vid-card:hover .vid-play-button {
+    opacity: 1;
+  }
+  
+  .vid-footer {
+    padding: 12px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #1a1a1a;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .vid-duration {
+    font-weight: 500;
+  }
+  
+  .vid-source {
+    opacity: 0.8;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .vid-card {
+      flex: 0 0 calc(25% - 12px); /* 4 cards per row */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .vid-card {
+      flex: 0 0 calc(33.333% - 11px); /* 3 cards per row */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .vid-card {
+      flex: 0 0 calc(50% - 8px); /* 2 cards per row */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .vid-card {
+      flex: 0 0 calc(100% - 0px); /* 1 card per row */
+    }
+    
+    .vid-gallery {
+      padding: 30px 15px;
+    }
+  }

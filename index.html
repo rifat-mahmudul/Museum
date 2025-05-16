@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museum Odense</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="muser.css" />
+    <link rel="stylesheet" href="video.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Vertical Museum Name -->
+    <div class="vertical-text">
+      <span>MUSEUM ODENSE</span>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">KØB BILLET</a></li>
+          <li><a href="#">NYHEDER</a></li>
+          <li><a href="#">PRAKTISK INFO</a></li>
+          <li><a href="#">EVENTS</a></li>
+          <li><a href="#">BESØG & OPLEV</a></li>
+          <li><a href="#">OM OS</a></li>
+        </ul>
+        <div class="nav-icons">
+          <button class="search-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <button class="menu-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <div>
+            <h1 class="hero-desc">
+              Oplev Museum Odense – en samling af unikke museumsoplevelser, hvor
+              viden og samlinger sætter tid, sted og tanke i nyt perspektiv.
+            </h1>
+          </div>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">
+              Planlæg dit besøg
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#" class="btn btn-secondary">
+              Køb billet
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Side Dots Navigation -->
+    <div class="side-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <!-- muser section -->
+    <section class="museum-carousel">
+      <div class="carousel-header">
+        <h2>Museer</h2>
+        <div class="carousel-dots">
+          <!-- Navigation Arrows (Optional) -->
+          <button class="carousel-nav prev" aria-label="Previous">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="carousel-nav next" aria-label="Next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <!-- Museum 1 -->
+          <div class="carousel-card">
+            <div class="card-image">
+              <img src="/assets/muser1.png" alt="Den Fynske Landsby" />
+            </div>
+            <div class="card-content">
+              <h3>Den Fynske Landsby</h3>
+              <p class="musem-para">
+                Den Fynske Landsby er et friluftsmuseum, som ligger i Odense og
+                fortæller om livet på landet i 1800-tallet.
+              </p>
+              <a href="#" class="card-button">
+                Den Fynske Landsby
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Museum 2 -->
+          <div class="carousel-card">
+            <div class="card-image">
+              <img src="/assets/muser2.png" alt="Carl Nielsen Museet" />
+            </div>
+            <div class="card-content">
+              <h3>Carl Nielsen Museet</h3>
+              <p class="musem-para">
+                Carl Nielsen Museet er et specialmuseum i Odense, hvor du lærer
+                om Fyns berømte komponist. Her kan du opleve komponistens liv og
+                værk gennem originale genstande fra den store danskers liv og
+                virke.
+              </p>
+              <a href="#" class="card-button">
+                Carl Nielsen Museet
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Museum 3 -->
+          <div class="carousel-card">
+            <div class="card-image">
+              <img src="/assets/muser3.png" alt="H.C. Andersens Hus" />
+            </div>
+            <div class="card-content">
+              <h3>H.C. Andersens Hus</h3>
+              <p class="musem-para">
+                H.C. Andersens Hus er et litteraturmuseum i Odense, der
+                inviterer til eventyr i digterens univers. Besøg det magiske
+                museum og følg i H.C. Andersens fodspor i Odense.
+              </p>
+              <a href="#" class="card-button">
+                TID
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Museum 4 -->
+          <div class="carousel-card">
+            <div class="card-image">
+              <img src="/assets/muser4.png" alt="H.C. Andersens Hus" />
+            </div>
+            <div class="card-content">
+              <h3>H.C. Andersens Hus</h3>
+              <p class="musem-para">
+                H.C. Andersens Hus tager dig på opdagelse i den danske
+                forfatterens litterære univers. Oplev det nye museum og dets
+                arkitektur.
+              </p>
+              <a href="#" class="card-button">
+                H.C. Andersens Hus
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Museum 5 -->
+          <div class="carousel-card">
+            <div class="card-image">
+              <img src="/assets/muser1.png" alt="Den Fynske Landsby" />
+            </div>
+            <div class="card-content">
+              <h3>Den Fynske Landsby</h3>
+              <p class="musem-para">
+                Den Fynske Landsby er et friluftsmuseum, som ligger i Odense og
+                fortæller om livet på landet i 1800-tallet.
+              </p>
+              <a href="#" class="card-button">
+                Den Fynske Landsby
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- video gallery section -->
+    <section class="vid-gallery">
+      <div class="vid-header">
+        <h2>Korte videoer</h2>
+        <div class="vid-nav-controls">
+          <!-- Navigation Arrows -->
+          <button class="vid-nav-btn vid-prev" aria-label="Previous">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="vid-nav-btn vid-next" aria-label="Next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="vid-container">
+        <!-- Video 1 -->
+        <div class="vid-card">
+          <div class="vid-tag">Sommerforestilling</div>
+          <div class="vid-thumbnail">
+            <img src="/assets/video1.png" alt="Jesper Dupont, instruktør" />
+            <div class="vid-overlay">
+              <div class="vid-title">Jesper Dupont, instruktør</div>
+              <div class="vid-description">
+                Lær i Den Fynske Landsby, der laver og opfører
+                Sommerforestilling
+              </div>
+              <div class="vid-play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="rgba(0,0,0,0.5)"
+                  ></circle>
+                  <polygon
+                    points="10 8 16 12 10 16 10 8"
+                    fill="white"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="vid-footer">
+            <div class="vid-duration">2 minutter</div>
+            <div class="vid-source">
+              Den Fynske Landsby er et frilandsmuseum.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="vid-card">
+          <div class="vid-tag">Gode råd</div>
+          <div class="vid-thumbnail">
+            <img src="/assets/video2.png" alt="Gode råd" />
+            <div class="vid-overlay">
+              <div class="vid-description">
+                Du kan for eksempel at det er en ide, som også før i tiden var
+                tilrådelig at...
+              </div>
+              <div class="vid-play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="rgba(0,0,0,0.5)"
+                  ></circle>
+                  <polygon
+                    points="10 8 16 12 10 16 10 8"
+                    fill="white"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="vid-footer">
+            <div class="vid-duration">2 minutter</div>
+            <div class="vid-source">
+              Den Fynske Landsby er et frilandsmuseum.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="vid-card">
+          <div class="vid-tag">Ølbrygning</div>
+          <div class="vid-thumbnail">
+            <img src="/assets/video3.png" alt="Ølbrygning" />
+            <div class="vid-overlay">
+              <div class="vid-description">
+                Øllet brygges med inspiration fra det gamle.
+              </div>
+              <div class="vid-play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="rgba(0,0,0,0.5)"
+                  ></circle>
+                  <polygon
+                    points="10 8 16 12 10 16 10 8"
+                    fill="white"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="vid-footer">
+            <div class="vid-duration">2 minutter</div>
+            <div class="vid-source">
+              Den Fynske Landsby er et frilandsmuseum.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="vid-card">
+          <div class="vid-tag">Behandling af jord</div>
+          <div class="vid-thumbnail">
+            <img src="/assets/video4.png" alt="Behandling af jord" />
+            <div class="vid-overlay">
+              <div class="vid-description">
+                Hvordan man behandler jorden og hvordan man dyrker sine...
+              </div>
+              <div class="vid-play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="rgba(0,0,0,0.5)"
+                  ></circle>
+                  <polygon
+                    points="10 8 16 12 10 16 10 8"
+                    fill="white"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="vid-footer">
+            <div class="vid-duration">2 minutter</div>
+            <div class="vid-source">
+              Den Fynske Landsby er et frilandsmuseum.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="vid-card">
+          <div class="vid-tag">Isolering i gamle dage</div>
+          <div class="vid-thumbnail">
+            <img src="assets/video5.png" alt="Isolering i gamle dage" />
+            <div class="vid-overlay">
+              <div class="vid-description">
+                Hvordan man kan og forstår og holder varme i gamle dage.
+              </div>
+              <div class="vid-play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="rgba(0,0,0,0.5)"
+                  ></circle>
+                  <polygon
+                    points="10 8 16 12 10 16 10 8"
+                    fill="white"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="vid-footer">
+            <div class="vid-duration">2 minutter</div>
+            <div class="vid-source">
+              Den Fynske Landsby er et frilandsmuseum.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="vid-card">
+          <div class="vid-tag">Sommerforestilling</div>
+          <div class="vid-thumbnail">
+            <img src="assets/video1.png" alt="Jesper Dupont, instruktør" />
+            <div class="vid-overlay">
+              <div class="vid-title">Jesper Dupont, instruktør</div>
+              <div class="vid-description">
+                Lær i Den Fynske Landsby, der laver og opfører
+                Sommerforestilling
+              </div>
+              <div class="vid-play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="rgba(0,0,0,0.5)"
+                  ></circle>
+                  <polygon
+                    points="10 8 16 12 10 16 10 8"
+                    fill="white"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="vid-footer">
+            <div class="vid-duration">2 minutter</div>
+            <div class="vid-source">
+              Den Fynske Landsby er et frilandsmuseum.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 7 -->
+        <div class="vid-card">
+          <div class="vid-tag">Sommerforestilling</div>
+          <div class="vid-thumbnail">
+            <img src="assets/video3.png" alt="Jesper Dupont, instruktør" />
+            <div class="vid-overlay">
+              <div class="vid-title">Jesper Dupont, instruktør</div>
+              <div class="vid-description">
+                Lær i Den Fynske Landsby, der laver og opfører
+                Sommerforestilling
+              </div>
+              <div class="vid-play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="rgba(0,0,0,0.5)"
+                  ></circle>
+                  <polygon
+                    points="10 8 16 12 10 16 10 8"
+                    fill="white"
+                  ></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="vid-footer">
+            <div class="vid-duration">2 minutter</div>
+            <div class="vid-source">
+              Den Fynske Landsby er et frilandsmuseum.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="muser.js"></script>
+    <script src="video.js"></script>
+  </body>
+</html>
