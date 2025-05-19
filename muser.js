@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Elements
     const track = document.querySelector('.carousel-track');
     const cards = document.querySelectorAll('.carousel-card');
-    const dots = document.querySelectorAll('.dot');
     const prevButton = document.querySelector('.carousel-nav.prev');
     const nextButton = document.querySelector('.carousel-nav.next');
     
@@ -35,18 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navigate(1);
         });
     }
-    
-    // Dots navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-            // Calculate the appropriate index based on dots
-            // For simplicity, we'll map 3 dots to our carousel
-            const totalSections = 3;
-            const itemsPerSection = Math.ceil(cards.length / totalSections);
-            currentIndex = Math.min(index * itemsPerSection, maxIndex);
-            updateCarousel();
-        });
-    });
     
     // Touch/Swipe Support
     let touchStartX = 0;
@@ -84,15 +71,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const offset = currentIndex * (cardWidth + gap);
         track.style.transform = `translateX(-${offset}px)`;
         
-        // Update dots
-        const activeDotIndex = Math.min(
-            Math.floor(currentIndex / Math.ceil(cards.length / dots.length)),
-            dots.length - 1
-        );
+        // Update button states
+        if (prevButton) {
+            prevButton.disabled = currentIndex === 0;
+        }
+        if (nextButton) {
+            nextButton.disabled = currentIndex >= maxIndex;
+        }
         
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === activeDotIndex);
-        });
+        // Note: The original code was trying to update dots, but there are no dots in the HTML
+        // If you want to add dots, you'll need to add them to your HTML first
     }
     
     function getCardsPerView() {

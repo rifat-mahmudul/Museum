@@ -1,23 +1,10 @@
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #111;
-    color: #fff;
-    line-height: 1.6;
-}
 
 /* Museum Carousel Section */
 .museum-carousel {
-    max-width: 1400px;
     margin: 0 auto;
     padding: 60px 20px;
 }
+
 
 /* Carousel Header */
 .carousel-header {
@@ -32,23 +19,6 @@ body {
     font-weight: 500;
 }
 
-.carousel-dots {
-    display: flex;
-    gap: 8px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    background-color: #fff;
-}
 
 /* Carousel Container */
 .carousel-container {
@@ -129,7 +99,7 @@ body {
 }
 
 .musem-para {
-    height: 140px;
+    height: 80px;
 }
 
 /* Responsive Styles */

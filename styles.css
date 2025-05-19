@@ -11,21 +11,56 @@ body {
   color: #fff;
   overflow-x: hidden;
   height: 100vh;
+  padding-bottom: 20px;
 }
 
-/* Vertical Museum Name */
-.vertical-text {
+.container {
+  max-width: 92%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Flex Container */
+.museum-sidebar {
   position: fixed;
   left: 40px;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  z-index: 10;
+  margin-bottom: 10px;
+}
+
+.vertical-text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-size: 14px;
   letter-spacing: 2px;
   font-weight: 500;
-  z-index: 10;
 }
+
+.side-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* .dot.active {
+  background-color: #fff;
+  transform: scale(1.2);
+} */
 
 /* Navigation */
 header {
@@ -35,6 +70,7 @@ header {
   width: 100%;
   padding: 30px 40px;
   z-index: 100;
+  backdrop-filter: blur(3px);
 }
 
 nav {
@@ -106,7 +142,18 @@ nav {
   position: relative;
   z-index: 2;
   padding: 0 40px 80px;
-  max-width: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hero-desc {
+  width: 100%;
+  max-width: 620px;
+  color: #fff;
 }
 
 .hero h1 {
@@ -118,12 +165,14 @@ nav {
 
 .hero-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 12px 24px;
   border-radius: 50px;
@@ -148,32 +197,6 @@ nav {
   transform: translateY(-2px);
 }
 
-/* Side Dots Navigation */
-.side-dots {
-  position: fixed;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 10;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dot.active {
-  background-color: #fff;
-  transform: scale(1.2);
-}
-
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .nav-links {
@@ -181,17 +204,30 @@ nav {
   }
 
   .hero-content {
-    padding: 0 30px 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 40px 80px;
   }
 
-  .hero h1 {
-    font-size: 24px;
+  .hero-desc {
+    font-size: 22px;
+    line-height: 1.4;
+    width: 100%;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }
 
 @media (max-width: 768px) {
-  .vertical-text {
-    left: 20px;
+  .container {
+    max-width: 96%;
+  }
+
+  .museum-sidebar {
+    display: none;
   }
 
   header {
@@ -199,14 +235,23 @@ nav {
   }
 
   .hero-content {
-    padding: 0 20px 50px;
+    padding: 0 20px 60px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero h1 {
     font-size: 20px;
+    line-height: 1.4;
   }
 
-  .side-dots {
-    right: 20px;
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

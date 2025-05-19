@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,15 +7,41 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="muser.css" />
     <link rel="stylesheet" href="video.css" />
+    <link rel="stylesheet" href="tomrer.css" />
+    <link rel="stylesheet" href="oplev.css" />
+    <link rel="stylesheet" href="card.css" />
+    <link rel="stylesheet" href="collection.css" />
+    <link rel="stylesheet" href="image.css" />
+    <link rel="stylesheet" href="strategy.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
-    <!-- Vertical Museum Name -->
-    <div class="vertical-text">
-      <span>MUSEUM ODENSE</span>
+    <!-- Flex Container -->
+    <div class="museum-sidebar">
+      <!-- Vertical Museum Name -->
+      <div class="vertical-text">MUSEUM ODENSE</div>
+
+      <!-- Side Dots Navigation -->
+      <div class="side-dots">
+        <a class="dot active" href="#section1"></a>
+        <a class="dot active" href="#section2"></a>
+        <a class="dot active" href="#section3"></a>
+        <a class="dot active" href="#section4"></a>
+        <a class="dot active" href="#section5"></a>
+        <a class="dot active" href="#section6"></a>
+        <a class="dot active" href="#section7"></a>
+        <a class="dot active" href="#section8"></a>
+        <a class="dot active" href="#section9"></a>
+      </div>
+
+      <div class="vertical-text">DK ENG</div>
     </div>
 
     <!-- Navigation -->
@@ -68,66 +94,55 @@
     </header>
 
     <!-- Hero Section -->
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          <div>
-            <h1 class="hero-desc">
-              Oplev Museum Odense – en samling af unikke museumsoplevelser, hvor
-              viden og samlinger sætter tid, sted og tanke i nyt perspektiv.
-            </h1>
-          </div>
-          <div class="hero-buttons">
-            <a href="#" class="btn btn-primary">
-              Planlæg dit besøg
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-            <a href="#" class="btn btn-secondary">
-              Køb billet
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
+    <section class="hero" id="section1">
+      <div class="hero-content">
+        <div>
+          <h1 class="hero-desc">
+            Oplev Museum Odense – en samling af unikke museumsoplevelser, hvor
+            viden og samlinger sætter tid, sted og tanke i nyt perspektiv.
+          </h1>
         </div>
-      </section>
-    </main>
-
-    <!-- Side Dots Navigation -->
-    <div class="side-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary">
+            Planlæg dit besøg
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#" class="btn btn-secondary">
+            Køb billet
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- muser section -->
-    <section class="museum-carousel">
+    <section class="museum-carousel container" id="section2">
       <div class="carousel-header">
         <h2>Museer</h2>
         <div class="carousel-dots">
@@ -330,7 +345,7 @@
     </section>
 
     <!-- video gallery section -->
-    <section class="vid-gallery">
+    <section class="vid-gallery container" id="section3">
       <div class="vid-header">
         <h2>Korte videoer</h2>
         <div class="vid-nav-controls">
@@ -679,8 +694,311 @@
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <!-- tomrer section -->
+    <section id="section4">
+      <div class="container">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="slide-container">
+                <div class="slide-content">
+                  <div>
+                    <h1>
+                      Få vækket din nysgerrighed for grøn hverdagsaktivisme, få
+                      masser af gode oplevelser og bliv klogere på både fortid
+                      og fremtid i Den Fynske Landsby.
+                    </h1>
+                  </div>
+                  <div class="author">
+                    <p class="author-name">Lars Jacobsense</p>
+                    <p class="author-title">Forsker</p>
+                  </div>
+                  <div class="navigation">
+                    <button class="nav-button nav-prev">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M15 18l-6-6 6-6" />
+                      </svg>
+                    </button>
+                    <button class="nav-button nav-next">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="slide-image">
+                  <img
+                    src="/assets/tomrer.png"
+                    alt="Person in a garden setting at Den Fynske Landsby"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 (Example additional slide) -->
+            <div class="swiper-slide">
+              <div class="slide-container">
+                <div class="slide-content">
+                  <div>
+                    <h1>
+                      Oplev historien og naturen i Den Fynske Landsby gennem
+                      guidede ture og interaktive udstillinger.
+                    </h1>
+                  </div>
+                  <div class="author">
+                    <p class="author-name">Marie Hansen</p>
+                    <p class="author-title">Guide</p>
+                  </div>
+                  <div class="navigation">
+                    <button class="nav-button nav-prev">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M15 18l-6-6 6-6" />
+                      </svg>
+                    </button>
+                    <button class="nav-button nav-next">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="slide-image">
+                  <img
+                    src="/assets/tomrer.png"
+                    alt="Den Fynske Landsby historic buildings"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- oplev section -->
+    <section class="excavation-section container" id="section5">
+      <img
+        src="/assets/oplev.png"
+        alt="Archaeological excavation showing skeletal remains being carefully uncovered"
+        class="excavation-image"
+      />
+      <div class="overlay">
+        <h2 class="museum-title">Oplev Museum Odense</h2>
+        <p class="museum-description">
+          - en samling af unikke museumsoplevelser, hvor viden og samlinger
+          sætter tid, sted og tanke i nyt perspektiv.
+        </p>
+      </div>
+    </section>
+
+    <!-- two card section -->
+    <section id="section6">
+      <div class="container card-container">
+        <div class="card blue">
+          <h2>Bliv årskort medlem</h2>
+          <p class="subtitle">- få flere fordele og rabatter</p>
+
+          <p class="benefits-title">Medlemsfordele</p>
+          <ul class="card-ul">
+            <li>Free admission and 5+ guest tickets</li>
+            <li>Member-only hours and exhibition previews</li>
+            <li>Free film screenings</li>
+            <li>and more</li>
+          </ul>
+
+          <button class="button">
+            <span>Bliv medlem af Museum Odense</span>
+            →
+          </button>
+        </div>
+
+        <div class="card green">
+          <h2>Bliv årskort medlem</h2>
+          <p class="subtitle">- få flere fordele og rabatter</p>
+
+          <p class="benefits-title">Medlemsfordele</p>
+          <ul class="card-ul">
+            <li>Free admission and 5+ guest tickets</li>
+            <li>Member-only hours and exhibition previews</li>
+            <li>Free film screenings</li>
+            <li>and more</li>
+          </ul>
+
+          <button class="button">
+            <span>Bliv medlem af Museum Odense</span>
+            →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- museam collection section -->
+    <section class="container" id="section7">
+      <div class="header-container">
+        <h1 class="header-text">Samlinger / arkiv</h1>
+        <div class="header-right">
+          <a href="#" class="header-link">Se alle</a>
+        </div>
+      </div>
+
+      <div class="artifacts-grid" id="artifacts-container">
+        <!-- Cards will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <!-- collection container section -->
+    <section class="container image-section" id="section8">
+      <div class="collection-container">
+        <div class="collection-header">
+          <div class="collection-title">Collection</div>
+          <div class="navigation-buttons">
+            <button class="nav-button prev-button" id="prevBtn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 18L9 12L15 6"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button class="nav-button next-button" id="nextBtn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 18L15 12L9 6"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="gallery-wrapper">
+          <div class="gallery" id="gallery">
+            <!-- Slide 1 -->
+            <div class="slide">
+              <div class="gallery-item">
+                <img
+                  src="assets/muser1.png"
+                  alt="People in a natural setting with greenery"
+                />
+              </div>
+              <div class="gallery-item">
+                <img
+                  src="assets/muser2.png"
+                  alt="Person standing near a wall with vines"
+                />
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+              <div class="gallery-item">
+                <img src="assets/muser3.png" alt="Additional image 1" />
+              </div>
+              <div class="gallery-item">
+                <img src="assets/muser4.png" alt="Additional image 2" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- strategy section -->
+    <section class="container" id="section9">
+      <div class="strategy-container">
+        <h1 class="strategy-title">Bæredygtig strategy</h1>
+
+        <div class="strategy-content">
+          <div class="strategy-column">
+            <div class="percentage">45%</div>
+            <p class="description">
+              Det er de gamle huse, materialer og godt håndværk der er
+              omdrejningspunktet for tømrervirksomheden "Oprindelige bygninger"
+              i Den Fynske Landsby.
+            </p>
+            <a href="#" class="link">Den Fynske Landsby →</a>
+          </div>
+
+          <div class="strategy-column">
+            <div class="percentage">45%</div>
+            <p class="description">
+              Det er de gamle huse, materialer og godt håndværk der er
+              omdrejningspunktet for tømrervirksomheden "Oprindelige bygninger"
+              i Den Fynske Landsby.
+            </p>
+            <a href="#" class="link">Den Fynske Landsby →</a>
+          </div>
+
+          <div class="strategy-column">
+            <div class="percentage">45%</div>
+            <p class="description">
+              Det er de gamle huse, materialer og godt håndværk der er
+              omdrejningspunktet for tømrervirksomheden "Oprindelige bygninger"
+              i Den Fynske Landsby.
+            </p>
+            <a href="#" class="link">Den Fynske Landsby →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script src="script.js"></script> -->
     <script src="muser.js"></script>
     <script src="video.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="tomrer.js"></script>
+    <script src="collection.js"></script>
+    <script src="image.js"></script>
   </body>
 </html>

@@ -1,0 +1,92 @@
+.strategy-container {
+    background-color: #f8c8c2;
+    padding: 40px;
+    color: black;
+    margin-top: 10px;
+}
+
+.strategy-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.strategy-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.strategy-column {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+    padding: 0 15px;
+}
+
+/* Add vertical divider after the first and second columns */
+.strategy-column:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.percentage {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.museum-info {
+    margin-top: 15px;
+}
+
+.museum-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Updated link styling to match the button in the image */
+.link {
+    display: inline-block;
+    font-size: 11px;
+    color: #000;
+    text-decoration: none;
+    background-color: #e8bdb8; /* Light pink with transparency */
+    padding: 10px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    .strategy-content {
+        flex-direction: column;
+    }
+    
+    .strategy-column {
+        width: 100%;
+    }
+    
+    /* Remove vertical dividers on mobile */
+    .strategy-column:not(:last-child)::after {
+        display: none;
+    }
+    
+    /* Add horizontal divider for mobile instead */
+    .strategy-column:not(:last-child) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+}
