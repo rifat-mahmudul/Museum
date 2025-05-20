@@ -65,3 +65,51 @@ document.addEventListener("DOMContentLoaded", function () {
     dots[activeIndex].classList.add("active");
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Get DOM elements
+  const menuBtn = document.querySelector(".menu-btn");
+  const closeMenuBtn = document.querySelector(".close-menu-btn");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const menuOverlay = document.querySelector(".menu-overlay");
+  const body = document.body;
+
+  // Function to open menu
+  function openMenu() {
+    mobileMenu.classList.add("active");
+    menuOverlay.classList.add("active");
+    body.classList.add("menu-open");
+  }
+
+  // Function to close menu
+  function closeMenu() {
+    mobileMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+    body.classList.remove("menu-open");
+  }
+
+  // Event listeners
+  menuBtn.addEventListener("click", openMenu);
+  closeMenuBtn.addEventListener("click", closeMenu);
+  menuOverlay.addEventListener("click", closeMenu);
+
+  // Close menu when clicking on a menu link (optional)
+  const menuLinks = document.querySelectorAll(".mobile-menu-links a");
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Close menu on escape key press
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  // Handle window resize (optional)
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) {
+      closeMenu();
+    }
+  });
+});
