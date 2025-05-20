@@ -40,7 +40,7 @@ body {
 .museum-name {
   position: fixed;
   left: 40px;
-  top: 30%;
+  top: 25%;
   z-index: 10;
 }
 
@@ -48,15 +48,15 @@ body {
 .language-selector-fixed {
   position: fixed;
   left: 40px;
-  top: 60%;
+  top: 65%;
   z-index: 10;
 }
 
 /* Side Dots Navigation - Not Fixed */
 .side-dots {
   position: absolute;
-  left: 42px;
-  top: 52%;
+  left: 42.5px;
+  top: 52.5%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
