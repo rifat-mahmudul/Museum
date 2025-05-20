@@ -64,37 +64,29 @@
       </div>
     </div>
 
-    <!-- Flex Container -->
-    <div class="museum-sidebar">
-      <!-- Vertical Museum Name -->
-      <div class="vertical-text">MUSEUM ODENSE</div>
+    <!-- Fixed Museum Name -->
+    <div class="vertical-text museum-name">MUSEUM ODENSE</div>
 
-      <!-- Side Dots Navigation -->
-      <div class="side-dots">
-        <a class="dot active" href="#section1"></a>
-        <a class="dot active" href="#section2"></a>
-        <a class="dot active" href="#section3"></a>
-        <a class="dot active" href="#section4"></a>
-        <a class="dot active" href="#section5"></a>
-        <a class="dot active" href="#section6"></a>
-        <a class="dot active" href="#section7"></a>
-        <a class="dot active" href="#section8"></a>
-        <a class="dot active" href="#section9"></a>
-      </div>
+    <!-- Fixed Language Selector -->
+    <div class="vertical-text language-selector-fixed">DK ENG</div>
 
-      <div class="vertical-text">DK ENG</div>
+    <!-- Side Dots Navigation (Not Fixed) -->
+    <div class="side-dots">
+      <a class="dot" data-slide="0"></a>
+      <a class="dot" data-slide="1"></a>
+      <a class="dot" data-slide="2"></a>
     </div>
 
     <!-- Navigation -->
     <header>
       <nav>
         <ul class="nav-links">
-          <li><a href="#">KØB BILLET</a></li>
-          <li><a href="#">NYHEDER</a></li>
-          <li><a href="#">PRAKTISK INFO</a></li>
-          <li><a href="#">EVENTS</a></li>
-          <li><a href="#">BESØG & OPLEV</a></li>
-          <li><a href="#">OM OS</a></li>
+          <a href="#">KØB BILLET</a>
+          <a href="#">NYHEDER</a>
+          <a href="#">PRAKTISK INFO</a>
+          <a href="#">EVENTS</a>
+          <a href="#">BESØG & OPLEV</a>
+          <a href="#">OM OS</a>
         </ul>
         <div class="nav-icons">
           <button class="search-btn">
@@ -134,50 +126,151 @@
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="section1">
-      <div class="hero-content">
-        <div>
-          <h1 class="hero-desc">
-            Oplev Museum Odense – en samling af unikke museumsoplevelser, hvor
-            viden og samlinger sætter tid, sted og tanke i nyt perspektiv.
-          </h1>
+    <!-- Hero Section with Carousel -->
+    <section class="hero-carousel" id="section1">
+      <div class="hero-slides">
+        <!-- Hero Slide 1 -->
+        <div class="hero-slide" style="background-image: url('/assets/hero.png')">
+          <div class="hero-content">
+            <div>
+              <h1 class="hero-desc">
+                Oplev Museum Odense – en samling af unikke museumsoplevelser, hvor
+                viden og samlinger sætter tid, sted og tanke i nyt perspektiv.
+              </h1>
+            </div>
+            <div class="hero-buttons">
+              <a href="#" class="btn btn-primary">
+                Planlæg dit besøg
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#" class="btn btn-secondary">
+                Køb billet
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="hero-buttons">
-          <a href="#" class="btn btn-primary">
-            Planlæg dit besøg
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#" class="btn btn-secondary">
-            Køb billet
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+        
+        <!-- Hero Slide 2 -->
+        <div class="hero-slide" style="background-image: url('/assets/muser1.png')">
+          <div class="hero-content">
+            <div>
+              <h1 class="hero-desc">
+                Udforsk historien gennem vores unikke udstillinger og bliv klogere på 
+                Odenses rige kulturarv og fascinerende fortællinger.
+              </h1>
+            </div>
+            <div class="hero-buttons">
+              <a href="#" class="btn btn-primary">
+                Se udstillinger
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#" class="btn btn-secondary">
+                Køb billet
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hero Slide 3 -->
+        <div class="hero-slide" style="background-image: url('/assets/muser2.png')">
+          <div class="hero-content">
+            <div>
+              <h1 class="hero-desc">
+                Deltag i vores spændende events og aktiviteter for hele familien
+                og skab minder, der varer ved.
+              </h1>
+            </div>
+            <div class="hero-buttons">
+              <a href="#" class="btn btn-primary">
+                Se events
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#" class="btn btn-secondary">
+                Køb billet
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -229,7 +322,7 @@
               <img src="/assets/muser1.png" alt="Den Fynske Landsby" />
             </div>
             <div class="card-content">
-              <h3>Den Fynske Landsby</h3>
+              <h3 class="musem-title">Den Fynske Landsby</h3>
               <p class="musem-para">
                 Den Fynske Landsby er et friluftsmuseum, som ligger i Odense og
                 fortæller om livet på landet i 1800-tallet.
@@ -260,7 +353,7 @@
               <img src="/assets/muser2.png" alt="Carl Nielsen Museet" />
             </div>
             <div class="card-content">
-              <h3>Carl Nielsen Museet</h3>
+              <h3 class="musem-title">Carl Nielsen Museet</h3>
               <p class="musem-para">
                 Carl Nielsen Museet er et specialmuseum i Odense, hvor du lærer
                 om Fyns berømte komponist. Her kan du opleve komponistens liv og
@@ -293,7 +386,7 @@
               <img src="/assets/muser3.png" alt="H.C. Andersens Hus" />
             </div>
             <div class="card-content">
-              <h3>H.C. Andersens Hus</h3>
+              <h3 class="musem-title">H.C. Andersens Hus</h3>
               <p class="musem-para">
                 H.C. Andersens Hus er et litteraturmuseum i Odense, der
                 inviterer til eventyr i digterens univers. Besøg det magiske
@@ -325,7 +418,7 @@
               <img src="/assets/muser4.png" alt="H.C. Andersens Hus" />
             </div>
             <div class="card-content">
-              <h3>H.C. Andersens Hus</h3>
+              <h3 class="musem-title">H.C. Andersens Hus</h3>
               <p class="musem-para">
                 H.C. Andersens Hus tager dig på opdagelse i den danske
                 forfatterens litterære univers. Oplev det nye museum og dets
@@ -357,7 +450,7 @@
               <img src="/assets/muser1.png" alt="Den Fynske Landsby" />
             </div>
             <div class="card-content">
-              <h3>Den Fynske Landsby</h3>
+              <h3 class="musem-title">Den Fynske Landsby</h3>
               <p class="musem-para">
                 Den Fynske Landsby er et friluftsmuseum, som ligger i Odense og
                 fortæller om livet på landet i 1800-tallet.
@@ -1014,5 +1107,6 @@
     <script src="collection.js"></script>
     <script src="image.js"></script>
     <script src="menu.js"></script>
+    <script src="hero-carousel.js"></script>
   </body>
 </html>

@@ -1,71 +1,111 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Get all sections and dots
-  const sections = document.querySelectorAll('section[id^="section"]');
+  // Get all slides
+  const slides = document.querySelectorAll(".hero-slide");
   const dots = document.querySelectorAll(".side-dots .dot");
+  let currentSlide = 0;
+  let slideInterval;
 
-  // Remove the active class from all dots initially
-  dots.forEach((dot) => {
-    dot.classList.remove("active");
-  });
+  // Initialize the carousel
+  function initCarousel() {
+    // Set the first slide as active
+    slides[0].classList.add("active");
+    dots[0].classList.add("active");
 
-  // Add active class to the first dot by default
-  dots[0].classList.add("active");
+    // Start the automatic slideshow
+    startSlideshow();
 
-  // Create an Intersection Observer to detect when sections are in view
-  const observerOptions = {
-    root: null, // viewport is the root
-    rootMargin: "0px",
-    threshold: 0.3, // section is considered in view when 30% is visible
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Get the section id
-        const id = entry.target.getAttribute("id");
-        // Find the index of the section (extract the number from "section1", "section2", etc.)
-        const index = parseInt(id.replace("section", "")) - 1;
-
-        // Update active dot
-        updateActiveDot(index);
-      }
+    // Add click event listeners to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        goToSlide(index);
+        resetInterval();
+      });
     });
-  }, observerOptions);
-
-  // Observe all sections
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
-
-  // Add click event listeners to dots
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      // Get the target section id from the href attribute
-      const targetId = dot.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
-
-      // Scroll to the section
-      targetSection.scrollIntoView({ behavior: "smooth" });
-
-      // Update active dot
-      updateActiveDot(index);
-    });
-  });
-
-  // Function to update the active dot
-  function updateActiveDot(activeIndex) {
-    // Remove active class from all dots
-    dots.forEach((dot) => {
-      dot.classList.remove("active");
-    });
-
-    // Add active class to the current dot
-    dots[activeIndex].classList.add("active");
   }
+
+  // Go to a specific slide
+  function goToSlide(index) {
+    // Remove active class from current slide and dot
+    slides[currentSlide].classList.remove("active");
+    dots[currentSlide].classList.remove("active");
+
+    // Update current slide index
+    currentSlide = index;
+
+    // If we've gone beyond the last slide, go back to the first
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
+
+    // If we've gone before the first slide, go to the last
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+
+    // Add active class to new current slide and dot
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+  }
+
+  // Go to the next slide
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+
+  // Start the automatic slideshow
+  function startSlideshow() {
+    slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  }
+
+  // Reset the interval when manually changing slides
+  function resetInterval() {
+    clearInterval(slideInterval);
+    startSlideshow();
+  }
+
+  // Initialize the carousel
+  initCarousel();
 });
 
+//scrolling color change
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const searchBtn = document.querySelector(".search-btn");
+  const menuBtn = document.querySelector(".menu-btn");
+  const museumName = document.querySelector(".museum-name");
+  const languageSelector = document.querySelector(".language-selector-fixed");
+
+  // Function to handle scroll
+  function handleScroll() {
+    // Get the height of the viewport
+    const viewportHeight = window.innerHeight;
+
+    // Get current scroll position
+    const scrollPosition = window.scrollY;
+
+    // Check if we've scrolled past the hero section (adjust the threshold as needed)
+    if (scrollPosition > viewportHeight * 0.8) {
+      // Add scrolled class to elements
+      header.classList.add("scrolled");
+      museumName.classList.add("scrolled");
+      languageSelector.classList.add("scrolled");
+    } else {
+      // Remove scrolled class from elements
+      header.classList.remove("scrolled");
+      museumName.classList.remove("scrolled");
+      languageSelector.classList.remove("scrolled");
+    }
+  }
+
+  // Add scroll event listener
+  window.addEventListener("scroll", handleScroll);
+
+  // Call once on page load to set initial state
+  handleScroll();
+});
+
+//hamburger menu
 document.addEventListener("DOMContentLoaded", () => {
   // Get DOM elements
   const menuBtn = document.querySelector(".menu-btn");

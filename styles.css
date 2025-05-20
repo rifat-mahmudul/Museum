@@ -5,10 +5,15 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: "Inter", sans-serif;
-  background-color: #111;
-  color: #fff;
   overflow-x: hidden;
   height: 100vh;
   padding-bottom: 20px;
@@ -20,32 +25,43 @@ body {
   padding: 0;
 }
 
-/* Flex Container */
-.museum-sidebar {
-  position: fixed;
-  left: 40px;
-  top: 40%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  z-index: 10;
-  margin-bottom: 10px;
-}
-
+/* Fixed vertical text elements */
 .vertical-text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-size: 14px;
   letter-spacing: 2px;
   font-weight: 500;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Museum name fixed position */
+.museum-name {
+  position: fixed;
+  left: 40px;
+  top: 30%;
+  z-index: 10;
+}
+
+/* Language selector fixed position */
+.language-selector-fixed {
+  position: fixed;
+  left: 40px;
+  top: 60%;
+  z-index: 10;
+}
+
+/* Side Dots Navigation - Not Fixed */
 .side-dots {
+  position: absolute;
+  left: 42px;
+  top: 52%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 15px;
+  z-index: 10;
 }
 
 .dot {
@@ -111,19 +127,59 @@ nav {
   cursor: pointer;
 }
 
-/* Hero Section */
-.hero {
-  height: 100vh;
-  width: 100%;
-  background-image: url("/assets/hero.png");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
+/* Styles when scrolled (black color) */
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.hero::before {
+header.scrolled .nav-links a {
+  color: #000;
+}
+
+header.scrolled .search-btn,
+header.scrolled .menu-btn {
+  color: #000;
+}
+
+.museum-name.scrolled,
+.language-selector-fixed.scrolled {
+  color: #000;
+  text-shadow: none;
+}
+
+/* Hero Carousel Section */
+.hero-carousel {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slides {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.hero-slide {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-slide::before {
   content: "";
   position: absolute;
   top: 0;
@@ -148,15 +204,14 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  position: absolute;
+  bottom: 0;
 }
 
 .hero-desc {
   width: 100%;
   max-width: 620px;
   color: #fff;
-}
-
-.hero h1 {
   font-size: 28px;
   font-weight: 500;
   line-height: 1.4;
@@ -226,7 +281,9 @@ nav {
     max-width: 96%;
   }
 
-  .museum-sidebar {
+  .museum-name,
+  .language-selector-fixed,
+  .side-dots {
     display: none;
   }
 
@@ -240,7 +297,7 @@ nav {
     align-items: flex-start;
   }
 
-  .hero h1 {
+  .hero-desc {
     font-size: 20px;
     line-height: 1.4;
   }
@@ -255,7 +312,6 @@ nav {
     justify-content: center;
   }
 }
-
 
 /* Mobile Menu Styles */
 .mobile-menu {
@@ -302,6 +358,7 @@ nav {
 .mobile-menu-links {
   list-style: none;
   margin-top: 20px;
+  text-align: center;
 }
 
 .mobile-menu-links li {
@@ -374,6 +431,6 @@ body.menu-open {
 
 @media (min-width: 768px) {
   .mobile-menu {
-    width: 400px;
+    width: 100%;
   }
 }
