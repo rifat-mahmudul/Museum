@@ -1,87 +1,67 @@
-// Add this to a new file (e.g., navigation.js) or include in your existing JavaScript
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Get all dots
-  const dots = document.querySelectorAll('.side-dots .dot');
+document.addEventListener("DOMContentLoaded", function () {
+  // Get all sections and dots
   const sections = document.querySelectorAll('section[id^="section"]');
-  
-  // Function to update active dot based on section ID
-  function updateActiveDot(sectionId) {
-    // Get the index from the section ID (e.g., "section1" -> 0)
-    const index = parseInt(sectionId.replace('section', '')) - 1;
-    
-    if (index >= 0 && index < dots.length) {
-      // Remove active class and reset styles for all dots
-      dots.forEach(dot => {
-        dot.classList.remove('active');
-        dot.style.backgroundColor = '';
-        dot.style.transform = '';
-      });
-      
-      // Add active class and apply styles to the current dot
-      dots[index].classList.add('active');
-      dots[index].style.backgroundColor = '#fff';
-      dots[index].style.transform = 'scale(1.2)';
-    }
-  }
-  
-  // Handle hash change (when URL changes)
-  window.addEventListener('hashchange', function() {
-    const hash = window.location.hash.substring(1); // Remove the # character
-    if (hash) {
-      updateActiveDot(hash);
-    }
+  const dots = document.querySelectorAll(".side-dots .dot");
+
+  // Remove the active class from all dots initially
+  dots.forEach((dot) => {
+    dot.classList.remove("active");
   });
-  
-  // Handle click events on dots
-  dots.forEach(dot => {
-    dot.addEventListener('click', function(e) {
-      // Let the default behavior happen (navigate to the hash)
-      // but also update the active dot immediately
-      const targetId = this.getAttribute('href').substring(1); // Remove the # character
-      updateActiveDot(targetId);
+
+  // Add active class to the first dot by default
+  dots[0].classList.add("active");
+
+  // Create an Intersection Observer to detect when sections are in view
+  const observerOptions = {
+    root: null, // viewport is the root
+    rootMargin: "0px",
+    threshold: 0.3, // section is considered in view when 30% is visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Get the section id
+        const id = entry.target.getAttribute("id");
+        // Find the index of the section (extract the number from "section1", "section2", etc.)
+        const index = parseInt(id.replace("section", "")) - 1;
+
+        // Update active dot
+        updateActiveDot(index);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all sections
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+
+  // Add click event listeners to dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Get the target section id from the href attribute
+      const targetId = dot.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      // Scroll to the section
+      targetSection.scrollIntoView({ behavior: "smooth" });
+
+      // Update active dot
+      updateActiveDot(index);
     });
   });
-  
-  // Handle scroll events to update hash when scrolling
-  let isScrolling = false;
-  window.addEventListener('scroll', function() {
-    if (!isScrolling) {
-      isScrolling = true;
-      
-      // Use requestAnimationFrame to limit scroll event handling
-      window.requestAnimationFrame(function() {
-        const scrollPosition = window.scrollY;
-        
-        // Find which section is currently in view
-        for (let i = 0; i < sections.length; i++) {
-          const section = sections[i];
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          
-          if (scrollPosition >= sectionTop - 200 && 
-              scrollPosition < sectionTop + sectionHeight - 200) {
-            // Update URL hash without triggering a scroll
-            const sectionId = section.id;
-            if (window.location.hash !== `#${sectionId}`) {
-              history.replaceState(null, null, `#${sectionId}`);
-              updateActiveDot(sectionId);
-            }
-            break;
-          }
-        }
-        
-        isScrolling = false;
-      });
-    }
-  });
-  
-  // Initialize - set active dot based on initial hash or first section
-  if (window.location.hash) {
-    const hash = window.location.hash.substring(1);
-    updateActiveDot(hash);
-  } else {
-    // Default to first section if no hash
-    updateActiveDot('section1');
+
+  // Function to update the active dot
+  function updateActiveDot(activeIndex) {
+    // Remove active class from all dots
+    dots.forEach((dot) => {
+      dot.classList.remove("active");
+    });
+
+    // Add active class to the current dot
+    dots[activeIndex].classList.add("active");
   }
 });
